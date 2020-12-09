@@ -1,5 +1,16 @@
-bow
+bou
 ===
+
+```
+ _____
+< bou >
+ -----
+       \   ,__,
+        \  (oo)____
+           (__)    )\
+              ||--|| *
+
+```
 
 Just a _basic, opinionated Ubuntu_, not even a Linux distro.
 
