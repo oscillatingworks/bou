@@ -1,0 +1,86 @@
+#!/bin/bash
+
+set -ex
+
+# enable all Ubuntu repositories
+add-apt-repository universe -y
+add-apt-repository multiverse -y
+
+# latest git
+apt-add-repository ppa:git-core/ppa -y
+
+# latest vim
+add-apt-repository ppa:jonathonf/vim -y
+
+# bashtop
+add-apt-repository ppa:bashtop-monitor/bashtop -y
+
+# dev tools
+apt install -y \
+  build-essential \
+  apt-transport-https \
+  terminator \
+  zsh \
+  git \
+  vim \
+  htop \
+  bashtop \
+  jq \
+  restic
+
+# docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable" -y
+apt install docker-ce -y
+groupadd -f docker
+
+# go
+wget -nc https://golang.org/dl/go1.15.6.linux-amd64.tar.gz -O /tmp/go1.15.6.linux-amd64.tar.gz || true
+tar -C /usr/local -xzf /tmp/go1.15.6.linux-amd64.tar.gz
+
+if ! grep -qF "export PATH=$PATH:/usr/local/go/bin" /etc/environment; then
+  echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/environment
+fi
+
+# dev-tld-resolver
+if [ ! -d "/usr/local/dev-tld-resolver" ] ; then
+  git clone https://github.com/mnishihan/dev-tld-resolver.git /usr/local/dev-tld-resolver
+  cd /usr/local/dev-tld-resolver/src && make
+  make install
+
+  if ! grep -qF "DEV_TLD_DOMAINS" /etc/environment; then
+    echo "DEV_TLD_DOMAINS=test" >> /etc/environment
+  fi
+
+  sed 's/^\(hosts:  *files\) \(mdns4_minimal\)/\1 dev_tld \2/' -i /etc/nsswitch.conf
+fi
+
+# google chrome
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+add-apt-repository \
+  "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
+  -y
+apt install google-chrome-stable
+rm /etc/apt/sources.list.d/google-chrome.list || true
+
+# spotify
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | apt-key add -
+add-apt-repository \
+  "deb http://repository.spotify.com stable non-free" \
+  -y
+apt install spotify-client
+
+# other tools
+apt install -y \
+  peek \
+  xclip \
+  cowsay \
+  neofetch \
+  ffmpeg
+
+# update all
+apt update
+apt dist-upgrade -y

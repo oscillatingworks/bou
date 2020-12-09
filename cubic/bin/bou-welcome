@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+wget -qnc https://raw.githubusercontent.com/bkendzior/cowfiles/master/small.cow -P /usr/share/cowsay/cows/
+/usr/games/cowsay -f small "bou"
+echo "All good! You can proceed with the ISO creation."

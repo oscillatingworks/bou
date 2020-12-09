@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -ex
+
+# Remove
+apt-get remove -y --purge \
+  libreoffice* \
+  thunderbird* \
+  snapd \
+  gnome-terminal \
+  gnome-getting-started-docs* \
+  gnome-online-accounts \
+  gnome-initial-setup \
+  gnome-mahjongg \
+  gnome-mines \
+  gnome-sudoku \
+  gnome-todo* \
+  gnome-shell-extension-desktop-icons \
+  gnome-shell-extension-ubuntu-dock \
+  rhythmbox* \
+  shotwell* \
+  deja-dup \
+  aisleriot
+
+# Clean up
+apt clean
+apt autoremove -y
