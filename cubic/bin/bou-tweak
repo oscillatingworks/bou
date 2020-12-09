@@ -5,8 +5,12 @@ set -ex
 # gnome extensions
 apt install -y \
   gnome-tweak-tool \
+  gnome-sushi \
   gnome-shell-extensions \
   gnome-shell-extension-autohidetopbar
+
+# wayland as default display server
+cp /usr/share/bou/cubic/files/gdm.conf /etc/gdm3/custom.conf
 
 # latest numix icons theme
 add-apt-repository ppa:numix/ppa -y
@@ -15,7 +19,6 @@ apt install numix-icon-theme-circle -y
 # fonts
 apt install -y \
   fonts-firacode
-curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
 
 # ant themes
 tar -C /usr/share/themes -xvf /usr/share/bou/cubic/files/themes/Ant.tar
@@ -23,8 +26,3 @@ tar -C /usr/share/themes -xvf /usr/share/bou/cubic/files/themes/Ant-Bloody.tar
 
 # wallpaper
 cp /usr/share/bou/cubic/images/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
-
-# pop-os/shell
-apt install -y node-typescript
-mkdir -p /usr/share/pop-os
-git clone https://github.com/pop-os/shell /usr/share/pop-os/shell

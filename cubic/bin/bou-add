@@ -26,7 +26,9 @@ apt install -y \
   htop \
   bashtop \
   jq \
-  restic
+  restic \
+  node-typescript \
+  telnet
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -43,6 +45,18 @@ tar -C /usr/local -xzf /tmp/go1.15.6.linux-amd64.tar.gz
 
 if ! grep -qF "export PATH=$PATH:/usr/local/go/bin" /etc/environment; then
   echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/environment
+fi
+
+# homebrew for linux
+if [ ! -d "/usr/share/linuxbrew" ] ; then
+  useradd -m -d /home/tmp tmp
+  echo "tmp ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
+  su - tmp -s /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  cp -r /home/linuxbrew /usr/share/
+  cp -r /home/tmp/.cache/Homebrew /usr/share/linuxbrew/
+  rm -rf /home/linuxbrew
+  userdel -r tmp
+  sed -i '$ d' /etc/sudoers
 fi
 
 # dev-tld-resolver
@@ -71,7 +85,11 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | apt-key add -
 add-apt-repository \
   "deb http://repository.spotify.com stable non-free" \
   -y
-apt install spotify-client
+apt install spotify-client -y
+
+# zoom
+wget -nc https://zoom.us/client/latest/zoom_amd64.deb -O /tmp/zoom_amd64.deb || true
+apt install -y /tmp/zoom_amd64.deb
 
 # other tools
 apt install -y \
@@ -79,7 +97,8 @@ apt install -y \
   xclip \
   cowsay \
   neofetch \
-  ffmpeg
+  ffmpeg \
+  laptop-mode-tools
 
 # update all
 apt update

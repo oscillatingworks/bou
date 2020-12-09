@@ -11,4 +11,7 @@ if [ ! -d "/usr/share/bou" ] ; then
 fi
 cd bou
 git checkout $VERSION
+
+cp userland/bin/bou /usr/local/bin
+
 cd cubic/bin; ./bou-init
