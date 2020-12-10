@@ -12,7 +12,7 @@ bou
 
 ```
 
-Just a _basic, opinionated Ubuntu_, not even a Linux distro.
+Just a _basic_, _opinionated_ take on _Ubuntu_, not even a distro. Made from and for folks in software and systems engineering.
 
 ## License
 
