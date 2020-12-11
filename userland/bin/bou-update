@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+BOUPATH=/usr/share/bou
+VERSION=$(cat $BOUPATH/VERSION)
+
+cd $BOUPATH
+sudo git tag -d $VERSION
+sudo git fetch --all --tags
+sudo git reset --hard $VERSION
+sudo cp $BOUPATH/userland/bin/bou* /usr/local/bin

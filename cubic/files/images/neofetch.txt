@@ -1,0 +1,20 @@
+${c1}
+
+ ..........................................
+ oooooooooooooooooooooooooooooooooooooooooo-
+ o/+ooooooooooooooooooooooooooooooooooooooo:
+ `  /oooooooooooooooooooooooooooooooooooooo:
+ :  `oooooooooooooooooooooooooooooooooooooo:
+ +   /o+:--:+oooooooo++++ooooooo+oooooooooo:
+ o`  .`      .+oo/-`      ./ooo`  -ooo+` `/:
+ o.    `-//:  `/`   ``---`  .o+   `+ooo`  `-
+ o:   `/oooo`  -/   -ooooo-  .+   .oooo`  `:
+ o/    `-//-  `-o`  :ooooo-  `/   -ooo/   .:
+ oo/.--`     `-oo/`  -:/-`  `-o-  `//-   `+:
+ ooooooo+/::/+oooo+-`     `./ooo:`     `.+o:
+ oooooooooooooooooooo+///+oooooooo/:::/+ooo:
+ oooooooooooooooooooooooooooooooooooooooooo:
+ oooooooooooooooooooooooooooooooooooooooooo:
+ oooooooooooooooooooooooooooooooooooooooooo:
+ +ooooooooooooooooooooooooooooooooooooooooo:
+  ..........................................

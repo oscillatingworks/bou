@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+echo "🟢 ${green}Configuring Docker..."
+echo "⚠️  ${yellow}Requires sudo${reset}"
+echo "⚠️  ${yellow}You need to restart for the changes to take effect${reset}"
+sudo usermod -aG docker $USER

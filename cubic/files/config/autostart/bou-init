@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=bou-init
+Exec=terminator --command "bou-init && rm ~/.config/autostart/bou*"
+Type=Application
+X-Gnome-Autostart-enable=true

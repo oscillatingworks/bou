@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -e
+
+export red=`tput setaf 1`
+export green=`tput setaf 2`
+export yellow=`tput setaf 3`
+export reset=`tput sgr0`
+
+BOUPATH=/usr/share/bou
+BOUHOME=$HOME/.bou
+
+echo "👋 ${green}Welcome to bou! Setting up version $(bou-version)..."
+if [ -f "$BOUHOME/flag/init" ]; then
+  echo "🟢 ${green}Nothing to do! bou $(bou-version) was already initated"
+  echo "⚠️  ${yellow}Remove $BOUHOME/flag/init to re-run${reset}"
+  exit 0
+fi
+mkdir -p $BOUHOME/flag
+
+bou-gnome
+
+if groups $USER | grep sudo &>/dev/null ; then
+  bou-homebrew
+  bou-zsh
+  bou-docker
+fi
+
+touch $BOUHOME/flag/init
+/usr/games/cowsay -f small "bou"
+echo "🟢 ${green}Done! Please close this window now"

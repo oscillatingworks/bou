@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -d "/home/linuxbrew/.linuxbrew" ] ; then
+  echo "🟢 ${green}Configuring Homebrew..."
+  echo "⚠️  ${yellow}Requires sudo${reset}"
+  sudo mkdir -p /home/linuxbrew
+  sudo cp -r $HOME/.linuxbrew /home/linuxbrew/.linuxbrew
+  sudo chown -R $USER:$USER /home/linuxbrew/.linuxbrew
+else
+  echo "⚠️  ${yellow}Homebrew setup already exists. Ask your system administrator to grant you access${reset}"
+fi
+
+rm -rf $HOME/.linuxbrew

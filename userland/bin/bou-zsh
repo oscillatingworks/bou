@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+echo "🟢 ${green}Configuring zsh..."
+echo "⚠️  ${yellow}Requires sudo${reset}"
+chsh -s $(which zsh)

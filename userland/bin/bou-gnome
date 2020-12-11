@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -e
+
+echo "🟢 ${green}Setting up GNOME..."
+
+# enable extensions
+gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+gnome-extensions enable hidetopbar@mathieu.bidon.ca
+
+# set gtk theme
+if [[ "$BOUTHEME" == "dark" ]]; then
+  BOUTHEME="Dracula"
+else
+  BOUTHEME="Ant"
+fi
+
+gsettings set org.gnome.desktop.interface gtk-theme "$BOUTHEME"
+gsettings set org.gnome.desktop.wm.preferences theme "$BOUTHEME"
+gsettings set org.gnome.shell.extensions.user-theme name "$BOUTHEME"
+
+# set icon theme
+gsettings set org.gnome.desktop.interface icon-theme "Numix-Circle"
+
+# set fonts
+dconf write /org/gnome/desktop/interface/font-name "'Arimo 10'"
+dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Arimo Bold 10'"
+dconf write /org/gnome/desktop/interface/monospace-font-name "'Hack 10'"
+
+# misc
+gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
+gsettings --schemadir /usr/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/schemas set org.gnome.shell.extensions.hidetopbar enable-intellihide "false"
+gsettings --schemadir /usr/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/schemas set org.gnome.shell.extensions.hidetopbar shortcut-keybind "['<Alt>b']"
+dconf write /desktop/ibus/panel/emoji/hotkey "['<Control><Shift>j']"
+dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'firefox.desktop', 'terminator.desktop']"
+dconf write /org/gnome/desktop/wm/preferences/button-layout "':close'"

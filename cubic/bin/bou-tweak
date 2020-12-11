@@ -9,20 +9,39 @@ apt install -y \
   gnome-shell-extensions \
   gnome-shell-extension-autohidetopbar
 
-# wayland as default display server
-cp /usr/share/bou/cubic/files/gdm.conf /etc/gdm3/custom.conf
+# user config files
 
-# latest numix icons theme
+## terminator
+mkdir -p /etc/skel/.config/terminator
+cp /usr/share/bou/cubic/files/config/terminator /etc/skel/.config/terminator/config
+## vs code
+mkdir -p /etc/skel/.config/Code/User
+cp /usr/share/bou/cubic/files/config/code /etc/skel/.config/Code/User/settings.json
+## neofetch
+mkdir -p /etc/skel/.config/neofetch
+cp /usr/share/bou/cubic/files/config/neofetch /etc/skel/.config/neofetch/config.conf
+cp /usr/share/bou/cubic/files/images/neofetch.txt /etc/skel/.config/neofetch/image.txt
+
+#autostart
+mkdir -p /etc/skel/.config/autostart
+cp /usr/share/bou/cubic/files/config/autostart/bou-init /etc/skel/.config/autostart/bou-init.desktop
+chmod -x /etc/skel/.config/autostart/bou-init.desktop
+
+# numix icons theme
 add-apt-repository ppa:numix/ppa -y
 apt install numix-icon-theme-circle -y
 
 # fonts
 apt install -y \
-  fonts-firacode
+  fonts-inconsolata \
+  fonts-croscore  # Arimo font
+cp /usr/share/bou/cubic/files/fonts/hack/* /usr/share/fonts/
 
-# ant themes
+# themes
 tar -C /usr/share/themes -xvf /usr/share/bou/cubic/files/themes/Ant.tar
-tar -C /usr/share/themes -xvf /usr/share/bou/cubic/files/themes/Ant-Bloody.tar
+tar -C /usr/share/themes -xf /usr/share/bou/cubic/files/themes/Dracula.tar.xz
+sed -e 's/Roboto, /Arimo, /g' -i /usr/share/themes/{Ant,Dracula*}/gnome-shell/gnome-shell.css
 
 # wallpaper
-cp /usr/share/bou/cubic/images/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
+cp /usr/share/bou/cubic/files/images/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
+cp /usr/share/bou/cubic/files/images/wallpaper.png /usr/share/backgrounds/bou.png

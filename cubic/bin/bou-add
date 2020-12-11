@@ -2,33 +2,43 @@
 
 set -ex
 
+# create tmp user
+useradd -m -d /home/tmp tmp || sed -i '$ d' /etc/sudoers
+echo "tmp ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
+
 # enable all Ubuntu repositories
-add-apt-repository universe -y
-add-apt-repository multiverse -y
+add-apt-repository universe -yn
+add-apt-repository multiverse -yn
 
 # latest git
-apt-add-repository ppa:git-core/ppa -y
+apt-add-repository ppa:git-core/ppa -yn
 
 # latest vim
-add-apt-repository ppa:jonathonf/vim -y
+add-apt-repository ppa:jonathonf/vim -yn
+
+# latest terminator
+add-apt-repository ppa:mattrose/terminator -yn
 
 # bashtop
-add-apt-repository ppa:bashtop-monitor/bashtop -y
+add-apt-repository ppa:bashtop-monitor/bashtop -yn
 
 # dev tools
+apt update
 apt install -y \
   build-essential \
+  software-properties-common \
   apt-transport-https \
-  terminator \
   zsh \
   git \
   vim \
+  terminator \
   htop \
   bashtop \
   jq \
   restic \
   node-typescript \
-  telnet
+  telnet \
+  tmux
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -48,15 +58,17 @@ if ! grep -qF "export PATH=$PATH:/usr/local/go/bin" /etc/environment; then
 fi
 
 # homebrew for linux
-if [ ! -d "/usr/share/linuxbrew" ] ; then
-  useradd -m -d /home/tmp tmp
-  echo "tmp ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
+if [ ! -d "/home/linuxbrew/.linuxbrew" ] ; then
   su - tmp -s /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  cp -r /home/linuxbrew /usr/share/
-  cp -r /home/tmp/.cache/Homebrew /usr/share/linuxbrew/
-  rm -rf /home/linuxbrew
-  userdel -r tmp
-  sed -i '$ d' /etc/sudoers
+  cp -r /home/linuxbrew/.linuxbrew /etc/skel/; rm -rf /home/linuxbrew
+  mkdir -p /etc/skel/.cache; cp -r /home/tmp/.cache/Homebrew /etc/skel/.cache
+fi
+
+# oh-my-zsh
+if [ ! -d "/home/tmp/.oh-my-zsh" ] ; then
+  su - tmp -s /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended --keep-zshrc" | grep "Run zsh to try it out."
+  cp /usr/share/bou/cubic/files/config/zsh /etc/skel/.zshrc
+  cp -r /home/tmp/.oh-my-zsh /etc/skel/
 fi
 
 # dev-tld-resolver
@@ -72,8 +84,16 @@ if [ ! -d "/usr/local/dev-tld-resolver" ] ; then
   sed 's/^\(hosts:  *files\) \(mdns4_minimal\)/\1 dev_tld \2/' -i /etc/nsswitch.conf
 fi
 
+# vs code
+wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+add-apt-repository \
+  "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" \
+  -y
+apt install code -y
+rm /etc/apt/sources.list.d/vscode.list* || true
+
 # google chrome
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+wget --no-check-certificate -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 add-apt-repository \
   "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
   -y
@@ -98,8 +118,13 @@ apt install -y \
   cowsay \
   neofetch \
   ffmpeg \
+  tree \
   laptop-mode-tools
 
 # update all
 apt update
 apt dist-upgrade -y
+
+# clean up tmp user
+userdel -r tmp
+sed -i '$ d' /etc/sudoers

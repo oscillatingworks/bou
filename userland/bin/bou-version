@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+cat /usr/share/bou/VERSION
