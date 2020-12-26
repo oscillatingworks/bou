@@ -37,7 +37,7 @@ which are the most common and useful ones, and will cover 99% of your needs.
 | Switch windows of same app | <Alt+`> |
 | Switch between workspaces | <Ctrl+Alt+Arrow Up> or <Ctrl+Alt+Arrow Down> |
 | Move app between workspaces | <Shift+Super+Page Up> or <Shift+Super+Page Down>   |
-| Full screen mode  | <F11> |
+| Full screen mode  | <'F11'> |
 | Maximize window  | <Super+Arrow Up> |
 | Restore window  | <Super+Arrow Down> |
 | Minimize window  | <Super+h> |
