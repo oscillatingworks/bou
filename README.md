@@ -22,7 +22,7 @@ modern distributions for personal and professional purposes over the last
 Ubuntu installation, adds software and extra tweaks based on conventions and
 strong opinions, and serves a clean, beautiful and practical desktop environment.
 
-![bou](https://user-images.githubusercontent.com/1381925/103100365-80408600-4612-11eb-9c70-5b29a01d3866.png)
+![bou](https://user-images.githubusercontent.com/1381925/103160397-f7be1300-47d4-11eb-85e0-58b0113131c3.gif)
 
 ### What's in
 
