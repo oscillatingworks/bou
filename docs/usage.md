@@ -30,7 +30,7 @@ which are the most common and useful ones, and will cover 99% of your needs.
 
 | Action  | Shortcut  |
 |:-:|:-:|
-| Show dashboard | <Super> |
+| Show dashboard | <'Super'> |
 | Show top bar | <Alt+b> |
 | Switch apps in workspace | <Alt+Tab> |
 | Switch apps in all workspaces | <Super+Tab> |
