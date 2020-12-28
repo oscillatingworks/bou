@@ -16,4 +16,4 @@ All notable changes to this project will be documented in this file.
 - First tentative release
 
 [Unreleased]: https://github.com/oscillatingworks/bou/compare/v20.0.0-rc1...HEAD
-[20.0.0-rc1]: https://github.com/oscillatingworks/bou/compare/dda6b656cbd635dab8e9fc6c254a46f01e4e43ca...v20.0.0-rc1
+[20.0.0-rc1]: https://github.com/oscillatingworks/bou/compare/8433cc5...v20.0.0-rc1
