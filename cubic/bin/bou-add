@@ -111,7 +111,7 @@ apt install spotify-client -y
 wget -nc https://zoom.us/client/latest/zoom_amd64.deb -O /tmp/zoom_amd64.deb || true
 apt install -y /tmp/zoom_amd64.deb
 
-# other tools
+# other tools or dependencies
 apt install -y \
   peek \
   xclip \
@@ -119,7 +119,8 @@ apt install -y \
   neofetch \
   ffmpeg \
   tree \
-  laptop-mode-tools
+  laptop-mode-tools \
+  zlib1g-dev
 
 # update all
 apt update
