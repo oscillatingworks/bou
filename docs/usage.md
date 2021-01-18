@@ -53,7 +53,8 @@ which are the most common and useful ones, and will cover 99% of your needs.
 | Close window | <Shift+Ctrl+w> |
 | Copy clipboard | <Shift+Ctrl+c> |
 | Paste clipboard | <Shift+Ctrl+v> |
+| Full screen mode  | <'F11'> |
 | Zoom in | <Ctrl+'+'> |
 | Zoom out | <Ctrl+'-'> |
 
-**[←Previous](install.md)** | **[Next→](screenshots.md)**
+**[←Previous](install.md)** | **[Next→](software.md)**

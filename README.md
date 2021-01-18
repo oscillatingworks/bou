@@ -41,8 +41,10 @@ strong opinions, and serves a clean, beautiful and practical desktop environment
 - [Restic](https://restic.net/) for backups
 - [Spotify](https://www.spotify.com/) music player
 - [Zoom](https://zoom.us/) videocalls
-- Software dev tools: curl, jq, telnet, tmux, htop, bashtop, Node.js/Typescript, etc.
+- Software dev tools: curl, jq, telnet, tmux, htop, bashtop, Node.js, etc.
 - Other misc: ffmpeg, peek, xclip, neofetch, etc.
+
+See [Software](docs/software.md) for more...
 
 ### What's NOT in
 
@@ -50,7 +52,7 @@ strong opinions, and serves a clean, beautiful and practical desktop environment
 - Thunderbird email client
 - Snap software packaging system
 - GNOME Terminal
-- Getting Started panel
+- On-boarding dashboard
 - Ubuntu online accounts integration
 - Ubuntu dock
 - Icons on desktop

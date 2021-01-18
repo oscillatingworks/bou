@@ -16,6 +16,8 @@ Table of contents
 
 ### 3. [Usage](usage.md)
 
-### 4. [Screenshots](screenshots.md)
+### 4. [Software](software.md)
+
+### 5. [Screenshots](screenshots.md)
 
 **[Next→](download.md)**
