@@ -19,7 +19,7 @@ You can find below a list of the most relevant software installed in `bou` plus 
 | Name | Version |
 |---|---|
 | Firefox  | 84.0  |
-| Google Chrome  | 87.0 |
+| Google Chrome  | 88.0 |
 
 #### Alternatives
 
@@ -30,7 +30,7 @@ You can find below a list of the most relevant software installed in `bou` plus 
 
 | Name | Version |
 |---|---|
-| apt  | 2.0.2  |
+| apt  | 2.0.4  |
 | Homebrew  | 2.7.1 |
 
 #### Alternatives
@@ -75,7 +75,7 @@ You can find below a list of the most relevant software installed in `bou` plus 
 * GNOME Terminal: `sudo apt install gnome-terminal`
 * kitty: `sudo apt install kitty`
 
-### Dev tools
+### CLI tools
 
 | Name | Version |
 |---|---|
@@ -88,6 +88,7 @@ You can find below a list of the most relevant software installed in `bou` plus 
 #### Recommended
 
 * httpie: `sudo apt install httpie`
+* screen: `sudo apt install screen`
 * gh: `brew install gh`
 * fzf: `brew install fzf`
 * the_silver_searcher: `brew install ag`
@@ -170,7 +171,9 @@ You can find below a list of the most relevant software installed in `bou` plus 
 
 #### Recommended
 
+* LibreOffice: `sudo apt install libreoffice`
 * Flameshot: `sudo apt install flameshot`
 * GIMP: `sudo apt install gimp`
+* Transmission: `sudo apt install transmission-gtk`
 
 **[←Previous](usage.md)** | **[Next→](screenshots.md)**

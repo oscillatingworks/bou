@@ -23,5 +23,6 @@ Strong opinions
 - LibreOffice is bloated, but you're one command away to install it.
 - Email in a browser over in native app, but you can install Thunderbird or Evolution otherwise.
 - No strong opinions about backups, but Restic is good.
+- Ubuntu font hasn't aged well. Arimo for desktop, Hack for terminal.
 
 **[←Previous](screenshots.md)**

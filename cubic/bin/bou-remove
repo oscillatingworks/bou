@@ -20,7 +20,9 @@ apt-get remove -y --purge \
   rhythmbox* \
   shotwell* \
   deja-dup \
-  aisleriot
+  aisleriot \
+  remmina \
+  transmission-gtk
 
 # Clean up
 apt clean

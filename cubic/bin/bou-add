@@ -50,8 +50,9 @@ apt install docker-ce -y
 groupadd -f docker
 
 # go
-wget -nc https://golang.org/dl/go1.15.6.linux-amd64.tar.gz -O /tmp/go1.15.6.linux-amd64.tar.gz || true
-tar -C /usr/local -xzf /tmp/go1.15.6.linux-amd64.tar.gz
+GOVERSION="1.15.7"
+wget -nc https://golang.org/dl/go$GOVERSION.linux-amd64.tar.gz -O /tmp/go$GOVERSION.linux-amd64.tar.gz || true
+tar -C /usr/local -xzf /tmp/go$GOVERSION.linux-amd64.tar.gz
 
 if ! grep -qF "export PATH=$PATH:/usr/local/go/bin" /etc/environment; then
   echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/environment
@@ -106,10 +107,6 @@ add-apt-repository \
   "deb http://repository.spotify.com stable non-free" \
   -y
 apt install spotify-client -y
-
-# zoom
-wget -nc https://zoom.us/client/latest/zoom_amd64.deb -O /tmp/zoom_amd64.deb || true
-apt install -y /tmp/zoom_amd64.deb
 
 # other tools or dependencies
 apt install -y \

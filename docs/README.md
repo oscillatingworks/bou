@@ -20,4 +20,6 @@ Table of contents
 
 ### 5. [Screenshots](screenshots.md)
 
+### 6. [Strong opinions](opinions.md)
+
 **[Next→](download.md)**

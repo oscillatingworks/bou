@@ -12,4 +12,4 @@ Screenshots
 ![Screenshot from 2020-12-26 23-22-52](https://user-images.githubusercontent.com/1381925/103160104-55e8f700-47d1-11eb-87d7-4bad3c34b3e7.png)
 ![Screenshot from 2020-12-26 23-18-40](https://user-images.githubusercontent.com/1381925/103160039-cba09300-47d0-11eb-8345-d5b93da4ef5c.png)
 
-**[←Previous](software.md)** | **Next→**
+**[←Previous](software.md)** | **[Next→](opinions.md)**

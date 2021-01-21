@@ -22,7 +22,7 @@ mkdir -p /etc/skel/.config/neofetch
 cp /usr/share/bou/cubic/files/config/neofetch /etc/skel/.config/neofetch/config.conf
 cp /usr/share/bou/cubic/files/images/neofetch.txt /etc/skel/.config/neofetch/image.txt
 
-#autostart
+# autostart
 mkdir -p /etc/skel/.config/autostart
 cp /usr/share/bou/cubic/files/config/autostart/bou-init /etc/skel/.config/autostart/bou-init.desktop
 chmod -x /etc/skel/.config/autostart/bou-init.desktop
@@ -33,9 +33,8 @@ apt install numix-icon-theme-circle -y
 
 # fonts
 apt install -y \
-  fonts-inconsolata \
   fonts-croscore  # Arimo font
-cp /usr/share/bou/cubic/files/fonts/hack/* /usr/share/fonts/
+cp /usr/share/bou/cubic/files/fonts/hack/* /usr/share/fonts/  # Hack font
 
 # themes
 tar -C /usr/share/themes -xvf /usr/share/bou/cubic/files/themes/Ant.tar

@@ -20,14 +20,15 @@ Just a _basic_, _opinionated_ take on the _Ubuntu_ desktop.
 modern distributions for personal and professional purposes over the last
 10 years. `bou` removes all the unwanted and distracting bits from a vanilla
 Ubuntu installation, adds software and extra tweaks based on conventions and
-strong opinions, and serves a clean, beautiful and practical desktop environment.
+[strong opinions](docs/opinions.md), and serves a clean, beautiful and practical
+desktop environment.
 
 ![bou](https://user-images.githubusercontent.com/1381925/103160397-f7be1300-47d4-11eb-85e0-58b0113131c3.gif)
 
 ### What's in
 
 - Default [Ubuntu installer](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
-- Customized [Gnome](https://www.gnome.org/) 3.36 desktop environment
+- Clean and minimal [Gnome](https://www.gnome.org/) desktop environment
 - [`apt`](http://manpages.ubuntu.com/manpages/bionic/man8/apt.8.html) and
   [Homebrew](https://docs.brew.sh/Homebrew-on-Linux) for software packaging
 - Light and dark flat, minimalistic windows themes
@@ -40,7 +41,6 @@ strong opinions, and serves a clean, beautiful and practical desktop environment
 - [zsh](https://sourceforge.net/p/zsh/code/ci/master/tree/) + [oh-my-zsh](https://ohmyz.sh/) as default shell
 - [Restic](https://restic.net/) for backups
 - [Spotify](https://www.spotify.com/) music player
-- [Zoom](https://zoom.us/) videocalls
 - Software dev tools: curl, jq, telnet, tmux, htop, bashtop, Node.js, etc.
 - Other misc: ffmpeg, peek, xclip, neofetch, etc.
 
@@ -81,7 +81,12 @@ with other Linux and macOS machines.
 based on a Ubuntu 20.04 LTS amd64 ISO file.
 
 All software described above is included in the `bou` image, although some [extra settings](userland/)
-are performed after installation or user creation.
+are performed after installation and user creation.
+
+## For who
+
+Anyone interested on Linux for the desktop, either as a newcomer or as a software professional
+coming from Windows or Mac worlds.
 
 ## Install
 
