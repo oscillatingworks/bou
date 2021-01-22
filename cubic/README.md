@@ -14,7 +14,7 @@ Build on Cubic
 5. Run `bou` build script on the virtual environment terminal:
 
   ```
-  VERSION=20.0.0; VERSION=$VERSION bash -c "$(wget -q https://raw.githubusercontent.com/oscillatingworks/bou/$VERSION/cubic/build.sh -O -)"
+  VERSION=v20.0.0; VERSION=$VERSION bash -c "$(wget -q https://raw.githubusercontent.com/oscillatingworks/bou/$VERSION/cubic/build.sh -O -)"
   ```
 
 6. Click Next, let customizations and options panel to process, then click Next again when you're done with packages selection.
