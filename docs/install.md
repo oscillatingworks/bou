@@ -7,7 +7,7 @@ Install
 ### Requisites
 
 - 2 GiB RAM
-- 30 GB of hard-drive space
+- 30 GB of free disk space
 - A CD/DVD drive or a USB port for the installer media
 - 4 GB DVD or USB drive
 
