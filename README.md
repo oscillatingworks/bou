@@ -1,4 +1,7 @@
 bou
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/oscillatingworks/bou)](https://github.com/oscillatingworks/bou/releases/latest)
+[![Website](https://img.shields.io/website?down_color=red&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Fboudesk.top)](https://boudesk.top)
+[![License](https://img.shields.io/github/license/oscillatingworks/bou)](https://raw.githubusercontent.com/oscillatingworks/bou/main/LICENSE)
 ===
 
 ```
