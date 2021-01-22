@@ -9,7 +9,7 @@ Install
 - 2 GiB RAM
 - 30 GB of hard-drive space
 - A CD/DVD drive or a USB port for the installer media
-- 4 GiB free space in DVD or USB drive
+- 4 GB DVD or USB drive
 
 ### Installation
 
