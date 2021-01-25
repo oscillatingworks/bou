@@ -6,6 +6,12 @@ Software
 
 You can find below a list of the most relevant software installed in `bou` plus alternatives that you can install manually.
 
+### Kernel
+
+| Name | Version |
+|---|---|
+| Linux  | 5.8.0-40-generic |
+
 ### Desktop environment
 
 | Name | Version |
