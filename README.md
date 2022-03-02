@@ -4,6 +4,8 @@ bou
 [![License](https://img.shields.io/github/license/oscillatingworks/bou)](https://raw.githubusercontent.com/oscillatingworks/bou/main/LICENSE)
 ===
 
+> ⚠️ This project is unmantained and image downloads have been disabled. 
+
 ```
  _____
 < bou >
